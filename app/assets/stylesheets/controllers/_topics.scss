@@ -1,0 +1,66 @@
+ul.topic_list, ul.supporters  {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    margin-bottom: 20px;
+    a, input {
+      width: 100%;
+    }
+  }
+}
+
+.action-panel {
+  margin: 20px 0;
+  text-align: right;
+}
+
+.supporters-panel {
+  @include font-family($light_font_family, $light_font);
+  color: color('base');
+  border: 2px solid color('border');
+  background: color('box-bg');
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.supporters-list {
+  margin-top: 5px;
+}
+
+.supporter_name {
+  text-transform: capitalize;
+}
+
+.topic_supporter {
+  &:after {
+    content: ", ";
+  }
+
+  &:last-child:after {
+    content: '';
+  }
+
+  a {
+    font-weight: $bold_font;
+  }
+}
+
+.supports_count {
+  @include font-size(fs(8));
+  padding: 1px 5px;
+  font-weight: $bold_font;
+  color: color('white');
+  background: color('darken-bg');
+  border-radius: 3px;
+}
+
+.pic-holder {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+}
+
+@media (min-width: $screen-md-min) {
+  .padding-for-avatar { padding-left: 100px; }
+}

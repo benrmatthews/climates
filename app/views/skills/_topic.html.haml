@@ -1,0 +1,3 @@
+.col-md-6
+  = simple_form_for :skill, url: topic_skills_path(topic) do |f|
+    = f.submit "#{topic} - #{current_user.help_summary(topic)}", class: "item #{current_user.topic_class(topic)}"

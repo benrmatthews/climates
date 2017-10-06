@@ -1,0 +1,18 @@
+en:
+  topic:
+    no_supporters: There's no one available to help you at this point
+  support:
+    skip:
+      notice: As you wish, you lazy person!
+      error: Sorry, but no one else is able to help. It all depends on you.
+      comment: "%{previous_user} skipped this support. New asignee: %{current_user}"
+    create:
+      notice: We asked %{name} to help you.
+    ack:
+      notice: Support acknowledged! now get this thing done!
+    finish:
+      notice: Finished helping. Awesome!
+    destroy:
+      notice: Your request was removed!
+      error: You cannot remove this request!
+      confirm: Do you really want to delete this?

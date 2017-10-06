@@ -1,0 +1,9 @@
+%li.position
+  %span.position__index
+    %span= '%02d' % index
+  = user.gravatar(45)
+  %span.position__name= user
+  %span.position__score
+    %span= supports_count
+    pts
+  = link_to '', user

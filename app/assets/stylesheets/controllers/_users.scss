@@ -1,0 +1,104 @@
+.user_avatar {
+  border-radius: 50%;
+}
+
+.leaderboard {
+  @extend %border-top;
+  margin: 0 0 30px 0;
+  -webkit-padding-start: 0;
+
+  .position {
+    $position-size: 55px;
+    @extend %border-bottom;
+    @include font-size(fs(4));
+    @include font-family($light_font-family, 300);
+    padding: 0 16px 0 0;
+    height: $position-size;
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+
+    &__index {
+      @extend .pull-left;
+      @include square($position-size);
+      display: inline-block;
+      text-align: center;
+      span {
+        @extend %centered-verticaly;
+      }
+    }
+    &__score, &__name {
+      line-height: $position-size - 3px;
+    }
+    &__score {
+      @extend .pull-right;
+      > span {
+        @extend .bold;
+      }
+    }
+    &__name {
+      padding-left: $position-size + 13px;
+    }
+    .user_avatar {
+      @include circle(45px);
+      margin: 5px;
+      position: absolute;
+      top: 0;
+      left: $position-size;
+      display: inline;
+    }
+    a {
+      @extend %box-link;
+    }
+
+    &:hover {
+      background: color('box-bg');
+    }
+
+    $platform-colors: (
+      1: #fed81c,
+      2: #dadada,
+      3: #df8612
+    );
+    @for $i from 1 through 3 {
+      &:nth-of-type(#{$i}) .position__index span {
+        @include circle(28px);
+        margin: 0 auto;
+        text-indent: -2000px;
+        background: map-get($platform-colors, $i) image-url('i/star.png') center center no-repeat;
+      }
+    }
+
+  }
+}
+
+.user_header .user_avatar {
+  float: left;
+  margin-top: 5px;
+}
+
+.user_info {
+  margin-left: 75px;
+  h1 {
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  h3 {
+    line-height: 1.4
+  }
+}
+
+.user_skills {
+  background: image-url('i/list.png') 20px center no-repeat;
+  padding-left: 70px;
+}
+
+.user_skill {
+  &:not(:first-child):before {
+    content: ', '
+  }
+  &:last-child:before {
+    content: 'and ';
+    font-weight: normal;
+  }
+}

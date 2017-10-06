@@ -1,0 +1,16 @@
+%nav.navbar{ role: 'navigation' }
+  .navbar-container
+    .container
+      .navbar-header
+        = link_to 'Help App', root_path, class: 'navbar-brand'
+        = link_to '#', class: 'navbar-toggle collapsed', data: { toggle: 'collapse', target: '.navbar-collapse' } do
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      .navbar-collapse.collapse
+        %ul.nav.navbar-nav
+          %li= link_to 'Ranking', users_path
+          %li= link_to 'Requests', supports_path
+        %ul.nav.navbar-nav.navbar-right
+          %li= link_to 'How can I help?', skills_path
+          %li.navbar-avatar= link_to current_user.gravatar(36)

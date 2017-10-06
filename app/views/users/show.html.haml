@@ -1,0 +1,24 @@
+.container
+  .row
+    .col-md-6
+      .user_header
+        = user.gravatar(60)
+        .user_info
+          %h1.header-line
+            = user
+          %h3.subheader-line
+            helped others
+            %strong= user.supports_count
+            times
+          - if user.archived?
+            %h4
+              This user is
+              %strong archived
+
+      %ul.user_skills.box--rounded
+        - skills.each do |skill|
+          %strong.user_skill= render skill
+    .col-md-6
+      %ul.supports.box--rounded
+        - supports.each do |support|
+          = render support

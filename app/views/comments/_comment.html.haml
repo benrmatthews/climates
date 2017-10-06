@@ -1,0 +1,12 @@
+.row
+  .col-xs-12.event.comment{ id: dom_id(comment) }
+    .image
+      = comment.user_gravatar(37)
+    .details
+      .who
+        %span.bold
+          = comment.user
+        wrote
+      .when
+        = comment.commented_at
+      .comment-body.markdown-body= preserve comment.body

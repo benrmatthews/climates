@@ -1,0 +1,6 @@
+.col-md-6
+  = link_to topic.show_link, class: 'item' do
+    %span.item__count
+      %span= topic.users_count
+    %span.item__label= topic
+    %span.item__description= topic.description

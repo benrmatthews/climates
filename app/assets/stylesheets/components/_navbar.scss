@@ -1,0 +1,62 @@
+.navbar {
+  @extend %border-bottom;
+  margin-bottom: 0;
+  background: color('white');
+  .nav {
+    > li > a {
+      @extend .bold;
+      color: color('base');
+      background: none;
+      &:hover {
+        color: color('active');
+      }
+    }
+  }
+  &-brand {
+    @include square(24px);
+    margin-top: 10px;
+    text-indent: -2000px;
+    background: image-url('logo/help_24px.png') no-repeat center center;
+    display: inline-block;
+    @media (max-width: $screen-sm-min) {
+      margin-left: 15px;
+    }
+  }
+  &-avatar {
+    margin-top: 6px;
+  }
+  &-collapse {
+    box-shadow: none;
+  }
+  &-avatar {
+    .nav & {
+      a { padding: 0 15px; }
+      img { display: inline; }
+    }
+  }
+  &-toggle {
+    &:hover {
+      .icon-bar {
+        background-color: color('dark-bg');
+      }
+    }
+    &:not(.collapsed) {
+      .icon-bar:first-child {
+        @include transform(rotate(45deg));
+        margin-top: 5px;
+      }
+      .icon-bar:last-child {
+        @include transform(rotate(-45deg));
+        margin-top: -8px;
+      }
+      .icon-bar:nth-of-type(2) {
+        background: color('white')
+      }
+    }
+  }
+}
+
+.icon-bar {
+  background-color: color('border');
+  @include transition (all .4s ease-in-out);
+}

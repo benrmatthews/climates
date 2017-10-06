@@ -1,0 +1,18 @@
+.row.new_comment_form_wrapper
+  .pic-holder.hidden-xs.hidden-sm
+    = current_user.gravatar(37)
+  = simple_form_for :comment, url: support_comments_path(support), html: { id: 'new_comment_form', class: 'col-xs-12'} do |f|
+    .markdown-panel
+      .arrow.hidden-xs.hidden-sm
+      .markdown-heading
+        %ul
+          %li.active= link_to '', '#write-content', data: { toggle: 'tab' }, id: 'write-tab', class: 'action-icon'
+          %li= link_to '', '#preview-content', data: { toggle: 'tab' }, id: 'preview-tab', class: 'action-icon'
+
+      .markdown-content
+        #write-content.tab-pane.active
+          = f.input :body, as: :text, label: false, input_html: { required: true },
+            placeholder: 'Leave a comment'
+        #preview-content.tab-pane.preview
+    .action-panel
+      = f.submit 'Comment', class: 'btn btn-success pull-right'

@@ -1,0 +1,6 @@
+Hi #{@user},
+#{@comment.user} added a new comment to the request ##{@support.id} (#{@support.body.truncate(10)}):
+\
+#{@comment.body}
+\
+You can see the request here: #{support_url(@support)}

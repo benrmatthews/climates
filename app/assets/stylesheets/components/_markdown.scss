@@ -1,0 +1,95 @@
+@import "markdown_github";
+
+.markdown-panel {
+  position: relative;
+  border: 2px solid color('border');;
+  border-radius: 5px;
+  .arrow {
+    @extend %border-bottom-left;
+    @include transform(rotate(45deg));
+    position: absolute;
+    top: 20px;
+    left: -9px;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-width: 2px;
+  }
+
+  .markdown-heading {
+    position: absolute;
+    top: 10px;
+    right: 0;
+
+    $tabs: (write, pencil),
+           (preview, eye);
+
+    @each $name, $icon in $tabs {
+      ##{$name}-tab {
+        background: image-url('i/#{$icon}.png') 0 0 no-repeat;
+      }
+      li.active ##{$name}-tab, li:hover ##{$name}-tab {
+        background: image-url('i/#{$icon}-hover.png') 0 0 no-repeat;
+      }
+    }
+
+
+    ul {
+      @extend .nav;
+      @extend .nav-tabs;
+      border-bottom: none;
+      text-decoration: none;
+      margin: 0;
+
+      li {
+        &.active {
+          .action-icon, .action-icon:hover { border: none; }
+        }
+        .action-icon {
+          border: none;
+          &:hover {
+            background: none;
+            border-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .markdown-content {
+    @extend .panel-body;
+    @extend .tab-content;
+    padding: 0px;
+
+    .tab-pane.preview {
+      @include font-size(fs(6));
+      padding: 15px;
+      pre {
+        margin: 10px auto;
+      }
+      p {
+        @include font-family($light_font_family, $light_font);
+        color: color('base');
+        margin: 0 auto 10px;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    textarea {
+      @include font-size(fs(6));
+      min-height: 200px;
+      max-height: 600px;
+      resize: vertical;
+      box-shadow: none;
+      border: none;
+      padding: 15px;
+      &:focus {
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
+}

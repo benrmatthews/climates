@@ -1,0 +1,54 @@
+@mixin item-color($label, $background, $border, $secondary_label) {
+  border: 2px solid $border;
+  background: $background;
+  color: $label;
+  .item__label {
+    color: $label;
+  }
+  .item__count span {
+    background: $label;
+    color: $background;
+  }
+  .item__description {
+    color: $secondary_label;
+  }
+}
+
+.item {
+  $side-padding: 20px;
+  @include item-color(color('active'), color('white'), color('border'), color('base'));
+  @extend .bold;
+  @include font-size(fs(5));
+  margin-bottom: 27px;
+  padding: 23px $side-padding;
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+  position: relative;
+  &__label {
+    @extend .pull-left;
+  }
+  &__count {
+    height: 100%;
+    right: $side-padding;
+    top: 0;
+    position: absolute;
+    span {
+      @extend .bold;
+      @extend %centered-verticaly;
+      @include font-size(fs(7));
+      padding: 1px 7px;
+      border-radius: 4px;
+    }
+  }
+  &__description {
+    @extend .pull-left;
+    @include font-size(fs(8));
+    display: block;
+    clear: both;
+  }
+  &:hover, &.active {
+    @include item-color(color('white'), color('base'), color('base'), color('border'));
+  }
+  @include clearfix();
+}

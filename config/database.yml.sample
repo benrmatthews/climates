@@ -1,0 +1,15 @@
+connection: &connection
+  adapter: postgresql
+  min_messages: WARNING  # Silences PostgreSQL NOTICE messages
+  encoding: unicode
+  pool: 5
+  username: help
+  password:
+
+development:
+  <<: *connection
+  database: help_development
+
+test:
+  <<: *connection
+  database: help_test

@@ -1,0 +1,5 @@
+%span.topic_supporter
+  = link_to supporter, supporter, class: 'supporter_name'
+  - if supporter.has_pending_supports?
+    %span.supports_count
+      = supporter.pending_supports_count

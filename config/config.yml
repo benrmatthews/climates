@@ -1,0 +1,28 @@
+defaults: &defaults
+  from: 'test@example.com'
+  cc: 'default@example.com'
+  domain: localhost
+  google_apps:
+    client_id: <%= ENV['GAPPS_ID'] %>
+    secret: <%= ENV['GAPPS_SECRET'] %>
+    domain: <%= ENV['GAPPS_DOMAIN'] %>
+  slack:
+    webhook_url: <%= ENV['SLACK_WEBHOOK_URL'] %>
+    default_channel: <%= ENV['SLACK_DEFAULT_CHANNEL'] %>
+  enabled_notifications: ['slack']
+
+development:
+  <<: *defaults
+
+test:
+ <<: *defaults
+ enabled_notifications: []
+
+production:
+  <<: *defaults
+  from: <%= ENV['POSTMARK_FROM'] %>
+  cc: <%= ENV['DEFAULT_CC'] %>
+  postmark:
+    api_key: <%= ENV['POSTMARK_API_KEY'] %>
+  domain: <%= ENV['APP_DOMAIN'] %>
+  secret_key_base: <%= ENV['SECRET_KEY_BASE'] %>

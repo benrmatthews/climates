@@ -1,0 +1,25 @@
+.container
+  .row
+    .col-xs-12
+      %h1.header-line
+        Need help with
+        %span.topic
+          = "#{topic.small_title}?"
+      %h5.header-line
+        = topic.description
+      %h3.subheader-line
+        Fear not!
+        %span.supporter_name
+          = random_supporter
+        is here to help!
+  .row
+    .col-md-8
+      = render 'supports/form', supporter: random_supporter, topic: topic
+    .col-md-2.hidden-xs.hidden-sm
+      = random_supporter.gravatar(200)
+  .row
+    .col-md-8
+      .supporters-panel
+        We selected a random supporter for you. All people that signed for this topic are:
+        .supporters-list
+          = render partial: 'supporter', collection: topic.supporters

@@ -1,0 +1,14 @@
+%td.request__column
+  .image
+    = support.state_image
+%td.request__column
+  = support.updated_at
+%td.request__column
+  = support.topic
+%td.request__body
+  = support.truncated_body
+  = link_to "View problem (#{pluralize(support.comments_count, 'comment')})", support
+%td.request__column
+  = support.receiver_link
+%td.request__column
+  = support.user_link

@@ -1,0 +1,140 @@
+.supporter-panel {
+  margin-bottom: 20px;
+  text-align: center;
+  a {
+    margin-left: 10px;
+  }
+}
+
+.request-preview {
+  margin: 0;
+  padding: 15px;
+  pre {
+    margin: 10px auto;
+  }
+  p {
+    @include font-family($light_font_family, $light_font);
+    @include font-size(fs(6));
+    color: color('base');
+    word-wrap: break-word;
+    margin: 0 auto 10px;
+  }
+}
+
+.request-history {
+  margin: 30px 0 20px;
+  color: color('base');
+  font: {
+    @include font-family($light_font_family, $light_font);
+    @include font-size(fs(4));
+  };
+}
+
+.comments {
+  @include font-family($light_font_family, $light_font);
+  color: color('base');
+}
+
+.event {
+  margin: 10px 0;
+  .image {
+    float: left;
+  }
+  .details {
+    margin-left: 55px;
+  }
+  .who {
+    @include font-size(fs(5));
+  }
+  .when {
+    @include font-size(fs(7));
+    line-height: 1;
+  }
+}
+
+.comment-body {
+  @include font-size(fs(5));
+  margin-top: 10px;
+  p {
+    margin: 0 0 10px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.new_comment_form_wrapper {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#new_support_search {
+  .form-group {
+    margin: 0;
+  }
+  .form-control {
+    box-shadow: none;
+    outline: none;
+    border: 1px solid color('active');
+  }
+  .radio_buttons {
+    width: 100%;
+    text-align: center;
+  }
+  .radio {
+    display: inline-block;
+    border: 1px solid color('active');
+    padding: 5px 10px;
+    cursor: pointer;
+    &.active {
+      background-color: lighten(color('active'), 40%);
+    }
+    &:nth-of-type(2) {
+      padding: 5px 15px;
+      border-right: 0;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    &:nth-of-type(4) {
+      border-left: 0;
+      padding: 5px 15px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    input {
+      display: none;
+    }
+  }
+  .search-button{
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .search-filters {
+    display: none;
+  }
+}
+
+.filters-trigger {
+  @include font-size(fs(7));
+  float: right;
+  margin-top: 15px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .supporter-panel {
+    margin: 36px auto 0 auto;
+    text-align: right;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  #new_comment_form {
+    padding-left: 80px;
+  }
+}

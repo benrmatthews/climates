@@ -1,0 +1,10 @@
+.jumbotron
+  %h1.logo.row
+    %i.glyphicon.glyphicon-fire
+    Help!
+  .alert.alert-danger
+    %p We couldn't log you in
+    %p
+      The reason we received from google was:
+      %code= failure_reason
+  = link_to 'Try again?', root_path, class: 'btn btn-primary btn-lg'

@@ -1,0 +1,11 @@
+.row
+  .col-xs-12.event.done
+    .image
+      = image_tag('i/status-done.png')
+    .details
+      .who
+        %span.bold
+          = support.user
+        marked as done
+      .when
+        = support.finished_at

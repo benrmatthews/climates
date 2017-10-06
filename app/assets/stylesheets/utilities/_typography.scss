@@ -1,0 +1,45 @@
+*, *:before, *:after {
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  color: color('base');
+  font-size: fs(7);
+  line-height: 1.6;
+}
+
+.bold, strong {
+  @include font-family($base_font_family, $bold_font);
+}
+
+a, a:hover {
+  color: color('active');
+}
+
+@for $heading from 1 through 5 {
+  h#{$heading} {
+    $heading-size: fs($heading);
+    @include font-size($heading-size);
+    margin: floor($heading-size * 0.6) 0;
+    color: color('base');
+    line-height: 1.6;
+  }
+}
+
+h1, h2, h5 {
+  @include font-family($base_font_family, $bold_font);
+}
+
+h3, h4 {
+  @include font-family($light_font_family, $light_font);
+}
+
+.header-line {
+  margin: 30px auto 10px auto;
+  line-height: 1.15;
+}
+
+.subheader-line {
+  margin-left: auto;
+  margin-top: 0;
+}

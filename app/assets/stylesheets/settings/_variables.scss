@@ -1,0 +1,31 @@
+$colors: (
+  'white':      #fff,
+  'base':       #525771,
+  'second':     #7e83a1,
+  'active':     #ffa529,
+  'border':     #edf3f7,
+  'dark-bg':    #2f353e,
+  'light-bg':   #fefefe,
+  'darken-bg':  #8b8e9d,
+  'inv-base':   #909db0,
+  'box-bg':     #fbfcfd
+);
+
+$base_font_family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$light_font_family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+$bold_font: 700;
+$light_font: 300;
+
+$rem_base: 14px;
+
+$font_sizes: (
+  fs1: 41px,
+  fs2: 29px,
+  fs3: 25px,
+  fs4: 21px,
+  fs5: 18px,
+  fs6: 16px,
+  fs7: $rem_base,
+  fs8: 12px
+);

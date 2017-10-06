@@ -1,0 +1,7 @@
+.container
+  .row
+    .col-xs-12
+      %h2 Select the topic you need help with:
+  .row
+    = render partial: 'topic', collection: topics
+  = render 'layouts/back_to_home'

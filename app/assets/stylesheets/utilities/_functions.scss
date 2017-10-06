@@ -1,0 +1,17 @@
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base_value: $rem_base)  {
+  $value: strip-unit($value) / strip-unit($base_value) * 1rem;
+  @return if($value == 0rem, 0, $value);
+}
+
+// font-size shorthand
+@function fs($size) {
+  @return map-get($font-sizes, "fs#{$size}");
+}
+
+@function color($name) {
+  @return map-get($colors, $name);
+}

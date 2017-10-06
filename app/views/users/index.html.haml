@@ -1,0 +1,22 @@
+%section.ranking
+  .container
+    .row
+      .col-lg-12
+        %h2
+          Best supporters!
+    .row
+      %h3
+        This week:
+    .row
+      .col-lg-8
+        %ol.leaderboard
+          - this_week_best_users.each_with_index do |u, i|
+            = render 'user', user: u, index: i + 1, supports_count: u.points_from_beginning_of_week
+    .row
+      %h3
+        All the time:
+    .row
+      .col-lg-8
+        %ol.leaderboard
+          - users.each_with_index do |u, i|
+            = render 'user', user: u, index: i + 1, supports_count: u.supports_count

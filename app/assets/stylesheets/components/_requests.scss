@@ -1,0 +1,21 @@
+.request {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  &__list {
+    height: 60px;
+    border-bottom: color('border') 1px solid;
+  }
+  &__column {
+    width: 10%;
+  }
+  &__body {
+    width: 50%;
+    text-align: left;
+  }
+  &__header {
+    @include font-size(fs(5));
+    @include font-family($base_font_family, $bold_font);
+    text-align: center;
+  }
+}

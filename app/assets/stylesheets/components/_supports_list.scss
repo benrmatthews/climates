@@ -1,0 +1,75 @@
+.supports-list {
+
+  .nav-tabs {
+    @extend %border-bottom;
+    margin-top: 0;
+    li {
+      @extend %border-right;
+      margin: 0;
+      a, a:hover {
+        @include font-family($light_font_family, $light_font);
+        @include font-size(fs(5));
+        margin: 0;
+        padding: 16px 21px;
+        background: color('white');
+        border: none;
+      }
+      a {
+        color: color('base');
+        &:hover {
+          color: color('active');
+        }
+      }
+      &.active a {
+        @include font-family($base_font_family, $bold_font);
+        color: color('active');
+      }
+      &:last-of-type {
+        border: none;
+      }
+    }
+  }
+}
+
+.supports {
+  margin: 25px 0;  
+}
+
+.support {
+  margin: 18px 30px;
+  padding-left: 50px;
+  list-style: none;
+  position: relative;
+  &__folks {
+    margin: 0;
+  }
+  &__category {
+    @extend .bold;
+    @include font-size(fs(3));
+    margin: -5px 0 0 0;
+  }
+  &:hover {
+    .support__category {
+      color: color('active');
+    }
+  }
+  &__details {
+    @include font-size(fs(8));
+    margin: -3px 0 0 0;
+    color: color('second');
+  }
+  @each $name in ('done', 'new', 'critical', 'worrying', 'ok') {
+    &.#{$name} {
+      background: image-url("i/status-#{$name}.png") left 3px no-repeat;
+    }
+  }
+  a {
+    @extend %box-link;
+  }
+}
+
+.collection_radio_buttons {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
