@@ -43,7 +43,6 @@ group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem "factory_girl_rails"
   gem 'forgery', '0.6.0'

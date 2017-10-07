@@ -47,9 +47,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.4.1)
-      capybara (>= 2.3.0, < 2.5.0)
-      json
     childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
     codeclimate-test-reporter (0.4.1)
@@ -273,7 +270,6 @@ DEPENDENCIES
   bootstrap-sass
   bourbon
   capybara
-  capybara-webkit
   codeclimate-test-reporter
   coffee-rails
   database_cleaner
@@ -310,3 +306,9 @@ DEPENDENCIES
   sprockets
   uglifier
   will_paginate
+
+RUBY VERSION
+   ruby 2.1.5p273
+
+BUNDLED WITH
+   1.16.0.pre.3
