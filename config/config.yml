@@ -1,6 +1,6 @@
 defaults: &defaults
-  from: 'test@example.com'
-  cc: 'default@example.com'
+  from: 'hello@climates.com'
+  cc: 'ben@montfort.io'
   domain: localhost
   google_apps:
     client_id: <%= ENV['GAPPS_ID'] %>
