@@ -1,7 +1,7 @@
 class SupportSearch < Searchlight::Search
- search_on Support.includes(:topic, :receiver, :user)
+# search_on Support.includes(:topic, :receiver, :user)
 
-  searches :body, :topic_id, :receiver_id, :user_id, :state
+ # searches :body, :topic_id, :receiver_id, :user_id, :state
 
   def paginated_results(page_number, per_page = 20)
     results.paginate page: page_number, per_page: per_page
