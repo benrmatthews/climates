@@ -3,9 +3,9 @@ defaults: &defaults
   cc: 'ben@montfort.io'
   domain: localhost
   google_apps:
-    client_id: <%= ENV['GAPPS_ID'] %>
-    secret: <%= ENV['GAPPS_SECRET'] %>
-    domain: <%= ENV['GAPPS_DOMAIN'] %>
+    client_id: 269899364614-hm3nsrooe2t34j0p53ej17kqop9efbtd.apps.googleusercontent.com
+    secret: RkSiCrAYLUAIOdaIGlwgEYYy
+    domain: climates.herokuapp.com
   slack:
     webhook_url: <%= ENV['SLACK_WEBHOOK_URL'] %>
     default_channel: <%= ENV['SLACK_DEFAULT_CHANNEL'] %>
